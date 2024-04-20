@@ -1,0 +1,243 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1{
+    font-size: 20px;
+}
+
+header, footer {
+    background-color: #2d055dd0;
+    color: #fff;
+    text-align: center;
+    padding: 3px;
+}
+footer {
+    margin-top: 400px;
+}
+h2{
+    text-align: center;
+    align-items: center;
+}
+table {
+    width: 90%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    margin-left: 70px;
+}
+table, th, td {
+    border: 1px solid #0b0b0b;
+}
+th, td {
+    padding: 8px;
+    text-align: center;
+}
+th {
+    background-color: #f2f2f2;
+}
+/* input[type="text"] {
+    width: 100px; 
+    height: 50px; 
+}
+input[type="text"] :hover{
+    border: 2px solid black;
+} */
+td, input{
+    width: 100px;
+    height: 50px;
+    padding: 4px;
+}
+.input:hover{
+    border: 2px solid black;
+}
+.profile-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+   
+  }
+  .profile-icon i {
+    color: #fff;
+    cursor: pointer;
+  }
+  .dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  .dropdown a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  .dropdown a:hover {
+    background-color: #f1f1f1;
+  }
+  .profile-icon:hover .dropdown {
+    display: block;
+}
+
+marquee{
+    color: #fff;
+    font-size: 15px;
+
+}
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    padding-top: 20px;
+  }
+  
+  .sidebar h2 {
+    color: white;
+    text-align: center;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    padding: 10px;
+  }
+  
+  .sidebar ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  .sidebar a:hover{
+    color: rgb(122, 215, 241);
+  }
+  .content {
+    margin-left: 250px;
+    padding: 20px;
+  }
+  
+  /* For mobile devices */
+  @media screen and (max-width: 600px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+    .sidebar ul li {
+      text-align: center;
+      width: 25%;
+    }
+    .content {
+      margin-left: 0;
+    }
+  }
+
+  .main {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+input[type="search"] {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 5px; /* Added margin-right */
+}
+
+button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+
+
+.dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 8px;
+}
+
+/* Hide the dropdown container by default */
+.dropdown-container {
+  display: none;
+  background-color: #555252;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  position: absolute;
+}
+
+/* Style the dropdown button */
+.dropdown-btn {
+  background-color: transparent;
+  color: #fff;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Style the dropdown button on hover */
+.dropdown-btn:hover {
+  background-color: #555;
+}
+
+/* Style the dropdown container links */
+.dropdown-container a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change the background color of dropdown links on hover */
+.dropdown-container a:hover {
+  background-color: transparent;
+}
+
+/* Show the dropdown container when dropdown button is hovered */
+.dropdown-btn:hover + .dropdown-container {
+  display: block;
+}
+
+/* Style the dropdown button on hover */
+li:hover {
+  background-color: #555;
+}
+
+
+
+
+
+
+
+
+
+
+

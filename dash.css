@@ -1,0 +1,235 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    /* background: url("maxionwheelcomany.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden; */
+  
+  }
+  img{
+    margin-left: 50px;
+    background-size: cover;
+    
+  }
+  
+  .sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    padding-top: 20px;
+  }
+  
+  .sidebar h2 {
+    color: white;
+    text-align: center;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    padding: 10px;
+  }
+  
+  .sidebar ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .content {
+    margin-left: 250px;
+    padding: 20px;
+  }
+  .sidebar a:hover{
+    color: rgb(122, 215, 241);
+  }
+  
+  /* For mobile devices */
+  @media screen and (max-width: 600px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+    .sidebar ul li {
+      text-align: center;
+      width: 25%;
+    }
+    .content {
+      margin-left: 0;
+    }
+  }
+h1{
+    font-size: 20px;
+   
+    
+}
+main {
+    padding: 20px 0;
+    text-align: center;
+}
+header, footer {
+    background-color: #2d055dd0;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+}
+footer {
+    margin-top: 600px;
+}
+marquee{
+    color: #fff;
+    font-size: 15px;
+
+}
+
+
+/* .hr-section{
+  margin-top: 50px;
+  margin-left: 300px;
+  margin-right: 150px;
+  margin-bottom: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+ 
+}
+.box-content{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-weight: bold;
+  text-decoration: none;
+
+}
+.box-content a{
+  text-decoration: none;
+}
+
+.box{
+  border: 0px solid black;
+  border-radius: 10px;
+  box-shadow: #011b26;
+  height: 100px;
+  width: 25%;
+  background-color: #f1f6f8;
+  padding: 20px 0px 15px;
+  margin: 30px;
+  box-shadow: 2px 2px 10px black;
+  transition: 400ms;
+}
+
+.box-content{
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+ 
+.box:hover{
+  background: #9776cbf6;
+}  */
+.profile-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+ 
+}
+.profile-icon i {
+  color: #fff;
+  cursor: pointer;
+}
+.dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown a:hover {
+  background-color: #f1f1f1;
+}
+.profile-icon:hover .dropdown {
+  display: block;
+}
+
+/* .dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 8px;
+} */
+
+/* Hide the dropdown container by default */
+.dropdown-container {
+  display: none;
+  background-color: #555252;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  position: absolute;
+}
+
+/* Style the dropdown button */
+.dropdown-btn {
+  background-color: transparent;
+  color: #fff;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Style the dropdown button on hover */
+.dropdown-btn:hover {
+  background-color: #555;
+}
+
+/* Style the dropdown container links */
+.dropdown-container a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change the background color of dropdown links on hover */
+.dropdown-container a:hover {
+  background-color: transparent;
+}
+
+/* Show the dropdown container when dropdown button is hovered */
+.dropdown-btn:hover + .dropdown-container {
+  display: block;
+}
+
+/* Style the dropdown button on hover */
+li:hover {
+  background-color: #555;
+}
+
+
+
+

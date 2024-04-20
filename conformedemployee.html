@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conformed Employee</title>
+    <link rel="stylesheet" href="conformedemployee.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+    <div class="sidebar">
+        <marquee behavior="scroll" direction="left" scrollamount="10" scrolldelay="100" width="250" height="40">
+            Welcome!
+        </marquee>
+    
+        
+        <h2>Dashboard</h2>
+        <ul>
+          <li><a href="index1.html" class="link active">Home</a></li>
+          <li><a href="dash.html" class="link active">Dashboard</a></li>
+          <li><a href="pendingemployee.html" class="link active">Pending Employee</a></li>
+
+        </ul>
+      </div>
+    
+
+    <header>
+        <h1>Header</h1>
+        <div class="profile-icon">
+            <i class="fas fa-user"></i>
+            <div class="dropdown">
+                <a href="#">Edit Profile</a>
+                <a href="#">Settings</a>
+                <a href="#">Logout</a>
+            </div>
+        </div>
+    </header>
+    <main class="table">
+        <section class="table_header">
+          <h2> Confirmed Employee Details </h2>
+        </section>
+        <div class="main">
+            <input type="search" placeholder="Type to search" id="searchInput">
+            <button onclick="searchEmployee()"><i class="fa fa-search icon-search"></i></button>
+        </div>
+        <section class="table_body">
+          <table id="employeeTable">
+            <thead>
+              <tr>
+                <th> Sr. No.</th>
+                <th> TKT.NO</th>
+                <th> Employee Name </th>
+                <th> Department </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td> 1 </td>
+                <td> 121 </td>
+                <td> Kaveree Shinde </td>
+                <td> Hr </td>
+              </tr>
+              <tr>
+                <td> 2 </td>
+                <td> 122 </td>
+                <td> Pooja Magar </td>
+                <td> IT </td>  
+              </tr>
+              <tr>
+                <td> 3 </td>
+                <td> 123 </td>
+                <td> John Doe </td>
+                <td> Sales </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+    
+      </main>
+    <footer>
+        <p>@2024 My Website. All Rights Reserved.</p>
+    </footer>
+    
+</body>
+</html>

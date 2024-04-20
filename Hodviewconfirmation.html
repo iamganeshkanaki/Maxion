@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hod View confirmation</title>
+    <link rel="stylesheet" href="Hodviewconfirmation.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+</head>
+<body>
+    <div class="sidebar">
+        <marquee behavior="scroll" direction="left" scrollamount="10" scrolldelay="100" width="250" height="40">
+            Welcome!
+        </marquee>
+    
+        
+        <h2>Dashboard</h2>
+        <ul>
+          <li><a href="index1.html" class="link active">Home</a></li>
+          <li><a href="HOD.html" class="link active">Dashboard</a></li>
+        </ul>
+      </div>
+    
+        <header>
+            <h1>My Website</h1>
+            <div class="profile-icon">
+              <i class="fas fa-user"></i>
+              <div class="dropdown">
+                  <a href="#">Edit Profile</a>
+                  <a href="#">Settings</a>
+                  <a href="#">Logout</a>
+            </div>
+        </header>
+        <main class="table">
+            <section class="table_header">
+              <h2> View Confirmation Form</h2>
+            </section>
+            <div class="main">
+              <input type="search" placeholder="Type to search" id="searchInput">
+              <button onclick="searchEmployee()"><i class="fa fa-search icon-search"></i></button>
+            </div>
+            <section class="table_body">
+              <table>
+                <thead>
+                  <tr>
+                    <th> Sr. No.</th>
+                    <th> Employee Name </th>
+                    <th> Action </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td> 1 </td>
+                    <td> Kaveree Shinde </td>
+                    <td> 
+                      <button class="btn1"><a href="appraislfrom.html">View Confirmation Form</a></button>
+                      <!-- <button class="btn1">View Confirmation Form</button> -->
+                    </td>
+                  </tr>
+                  <tr>
+                    <td> 2 </td>
+                    <td> Pooja Magar  </td>
+                    <td> 
+                      <button class="btn1"><a href="appraislfrom.html">View Confirmation Form</a></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td> 2 </td>
+                    <td> Geeta Patil  </td>
+                    <td> 
+                      <button class="btn1"><a href="appraislfrom.html">View Confirmation Form</a></button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+        
+          </main>
+        <footer>
+            <p>Footer</p>
+        </footer>
+    
+        <script>
+          function searchEmployee() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            table = document.querySelector("table");
+            tr = table.getElementsByTagName("tr");
+        
+            for (i = 0; i < tr.length; i++) {
+              td = tr[i].getElementsByTagName("td")[1]; // Index 1 for Employee Name column
+              if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                  tr[i].style.display = "";
+                } else {
+                  tr[i].style.display = "none";
+                }
+              }
+            }
+          }
+        </script>
+    </body>
+    </html>
