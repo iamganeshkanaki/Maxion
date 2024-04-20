@@ -11,8 +11,8 @@ require("./DB/DB.js")
 
 app.use(cors());
 app.post('/demo', async (req, res) => {
-    const { fname, lname, email, pass } = req.body;
-    const user = new User({ fname, lname, email, pass });
+    const {role, fname, lname, email, pass } = req.body;
+    const user = new User({role, fname, lname, email, pass });
     await user.save();
     res.json({ message: 'User created successfully', user });
 })
