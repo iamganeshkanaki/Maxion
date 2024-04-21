@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="index1.css">
+    <link rel="stylesheet" href="home.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
+
 <body>
     <header class="header">
-        <a href="" class="logo"></a>
+        <img src="../../logo.png" class="logo" alt="">
 
         <nav class="navbar">
             <a href="#">Home</a>
             <a href="#">About Us</a>
             <a href="#">Help</a>
-            <!-- <a href="#">Login/Sign up</a> -->
-            <a href="login1.html" class= "btn-box-login">Sign In/Sign Up</a>
+            <span id="auname"></span>
+            <form id="logout">
+                <input id="name" name="name" type="submit" class="btn-box-login" value="LogOut">
+                <!-- <input type="submit" name="lobtn" value="Logout" title="LogOut" class="btn-box-login"> -->
+            </form>
             <!-- <button class="btn-box-login" id="signInUp" onclick="login">Sign In/Sign Up</button> -->
         </nav>
     </header>
@@ -25,13 +30,15 @@
         <div class="home-content">
             <h1>Maxion Wheels co. pvt. ltd.</h1>
             <h3>This is Home Page</h3>
-            <p1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis voluptatibus error explicabo non quibusdam assumenda reiciendis cupiditate eos dolor, commodi tenetur aliquam reprehenderit hic fuga ipsam eligendi doloremque eum! Voluptate?</p1>
+            <p1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis voluptatibus error explicabo non
+                quibusdam assumenda reiciendis cupiditate eos dolor, commodi tenetur aliquam reprehenderit hic fuga
+                ipsam eligendi doloremque eum! Voluptate?</p1>
 
             <div class="home-sci">
-                <a href="#"><i class='bx bxl-facebook' ></i></a>
+                <a href="#"><i class='bx bxl-facebook'></i></a>
                 <a href="#"><i class='bx bxl-instagram'></i></a>
-                <a href="#"><i class='bx bxl-linkedin' ></i></a>
-                <a href="#"><i class='bx bx-map' ></i></a>
+                <a href="#"><i class='bx bxl-linkedin'></i></a>
+                <a href="#"><i class='bx bx-map'></i></a>
             </div>
         </div>
     </section>
@@ -54,14 +61,14 @@
                 <a>Sell on MaxionWheels Business</a>
                 <a>Sell apps on MaxionWheels</a>
                 <a>Become an Affiliate</a>
-                
+
             </ul>
 
             <ul>
                 <p>Maxion Payment</p>
                 <a>Maxion Business Card</a>
                 <a>Shop with Points</a>
-               
+
             </ul>
 
             <ul>
@@ -71,7 +78,7 @@
                 <a>Returns & Replacements</a>
                 <a>Help</a>
             </ul>
-            
+
         </div>
 
         <div class="foot-panel3">
@@ -92,4 +99,7 @@
 
     </footer>
 </body>
+
+<script src="../../JS/Home.js"></script>
+
 </html>

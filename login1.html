@@ -38,21 +38,23 @@
 
             <!------------------- login form -------------------------->
 
-            <div class="login-container" id="login">
+            <form class="login-container" id="login">
                 <div class="top">
                     <span>Don't have an account? <a href="#" onclick="register()">Sign Up</a></span>
                     <header>Login</header>
                 </div>
                 <div class="input-box">
-                    <input type="text" class="input-field" placeholder="Username or Email">
-                    <i class="bx bx-user"></i>
+                    <input id="email" name="email" type="text" class="input-field" placeholder="Email" required>
+                    <i class="bx bx-envelope"></i>
                 </div>
+
                 <div class="input-box">
-                    <input type="password" class="input-field" placeholder="Password">
+                    <input id="pass" name="pass" type="password" class="input-field" placeholder="Password" required>
                     <i class="bx bx-lock-alt"></i>
                 </div>
+
                 <div class="input-box">
-                    <input type="submit" class="submit" value="Sign In">
+                    <input id="submit" name="sbtn" type="submit" class="submit" value="Signin">
                 </div>
                 <div class="two-col">
                     <div class="one">
@@ -63,7 +65,7 @@
                         <label><a href="#">Forgot password?</a></label>
                     </div>
                 </div>
-            </div>
+            </form>
 
             <!------------------- registration form -------------------------->
             <form class="register-container" id="register">
@@ -71,7 +73,7 @@
                     <span>Have an account? <a href="#" onclick="login()">Login</a></span>
                     <header>Sign Up</header>
                 </div>
-                <div class="section">
+                <div class="section" aria-required="true">
                     <label for="feedback">Please select your role:</label>
                     <input type="radio" id="HOD" name="role" value="HOD">
                     <label for="HOD">HOD</label>
@@ -82,28 +84,28 @@
                 </div>
                 <div class="two-forms">
                     <div class="input-box">
-                        <input id="fname" name="fname" type="text" class="input-field" placeholder="Firstname">
+                        <input id="fname" name="fname" type="text" class="input-field" required placeholder="Firstname">
                         <i class="bx bx-user"></i>
                     </div>
                     <div class="input-box">
-                        <input id="lname" name="lname" type="text" class="input-field" placeholder="Lastname">
+                        <input id="lname"  required name="lname" type="text" class="input-field" placeholder="Lastname">
                         <i class="bx bx-user"></i>
                     </div>
                 </div>
                 <div class="input-box">
-                    <input id="email" name="email" type="text" class="input-field" placeholder="Email">
+                    <input id="email"  required name="email" type="text" class="input-field" placeholder="Email">
                     <i class="bx bx-envelope"></i>
                 </div>
                 <div class="input-box">
-                    <input id="pass" name="pass" type="password" class="input-field" placeholder="Password">
+                    <input id="pass"  required name="pass" type="password" class="input-field" placeholder="Password">
                     <i class="bx bx-lock-alt"></i>
                 </div>
-            
+
                 <div class="input-box">
-                    <input id="name" name="name" type="submit" class="submit" value="Register">
-                </div>                       
+                    <input id="name"  name="name" type="submit" class="submit" value="Register">
+                </div>
             </form>
-            
+
 
         </div>
     </div>
