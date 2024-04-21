@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+</head>
+
+<body>
+
+    <form id="forgot-form">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <button type="submit" id="forgot">Submit</button>
+    </form>
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        document.getElementById("forgot-form").addEventListener('submit', function (event) {
+            event.preventDefault();
+            let formData = new FormData(this);
+            let formDataObject = {};
+            for (var pair of formData.entries()) {
+                formDataObject[pair[0]] = pair[1];
+            }
+            console.log(formDataObject.email);
+            Email.send({
+                Host: "smtp.gmail.com",
+                Username: "Maxios", // your Gmail username
+                Password: "dagebycmsmcjbmzq", // your Gmail password
+                To: formDataObject.email,
+                From: "maxiosgn@gmail.com", // your Gmail address
+                Subject: "Forgot Password Request",
+                Body: "Please click the link to reset your password: <a href='http://127.0.0.1:5501/newPassword.html'>Reset Password</a>",
+            })
+                .then(function (message) {
+                    alert("Email sent successfully");
+                    console.log(message);
+                })
+                .catch(function (error) {
+                    alert("Failed to send email: " + error);
+                });
+            // Redirect to a new page after sending the email
+            // window.location.href = "../newPassword.html";
+        });
+    </script>
+
+</body>
+
+</html>
