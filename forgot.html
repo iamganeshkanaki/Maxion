@@ -25,24 +25,27 @@
                 formDataObject[pair[0]] = pair[1];
             }
             console.log(formDataObject.email);
-            Email.send({
-                Host: "smtp.gmail.com",
-                Username: "Maxios", // your Gmail username
-                Password: "dagebycmsmcjbmzq", // your Gmail password
-                To: formDataObject.email,
-                From: "maxiosgn@gmail.com", // your Gmail address
-                Subject: "Forgot Password Request",
-                Body: "Please click the link to reset your password: <a href='http://127.0.0.1:5501/newPassword.html'>Reset Password</a>",
+            fetch('http://127.0.0.1:12345/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({                    
+                    to: formDataObject.email,
+                    subject: 'Test Email',
+                    text: 'This is a test email sent from JavaScript',
+                }),
             })
-                .then(function (message) {
-                    alert("Email sent successfully");
-                    console.log(message);
+                .then(response => {
+                    if (response.ok) {
+                        console.log('Email sent successfully');
+                    } else {
+                        console.error('Error sending email');
+                    }
                 })
-                .catch(function (error) {
-                    alert("Failed to send email: " + error);
+                .catch(error => {
+                    console.error('Error sending email:', error);
                 });
-            // Redirect to a new page after sending the email
-            // window.location.href = "../newPassword.html";
         });
     </script>
 

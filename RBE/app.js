@@ -7,6 +7,7 @@ const bodyParser = require("body-parser");
 const port = process.env.PORT;
 const cors = require("cors");
 const User = require("./Schema/UserSchema.js");
+const mailSend = require("./controller/emailController.js");
 
 /* App uses starts from here */
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -63,6 +64,11 @@ app.post('/logout', (req, res) => {
 });
 
 
+app.post('/sendmail', (req, res) => {
+    const { email, subject, message } = req.body;
+    let resp = mailSend(email, subject, message);
+    res.json({ msg: resp });
+})
 app.listen((port), (req, res) => {
     console.log(`http://127.0.0.1:${port}`);
 })
