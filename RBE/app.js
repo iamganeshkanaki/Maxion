@@ -25,19 +25,21 @@ app.use(session({
 //this is for Registration route
 app.post('/register', async (req, res) => {
     const { role, fname, lname, email, pass } = req.body;
-    const user = new User({ role, fname, lname, email, pass });
-    await user.save();
-    res.json({ message: 'User created successfully', user });
+    if (User.findOne({ email: email })) {
+        res.sendStatus(409).json({ msg: "Email Already Exists!" });
+    } else {
+        const user = new User({ role, fname, lname, email, pass });
+        await user.save();
+        res.json({ message: 'User created successfully', user });
+    }
 })
 
 
 app.post("/login", async (req, res) => {
     const { email, pass } = req.body;
-    // console.log("This is: ", email, pass);
     await User.findOne({ email }).then((user) => {
         if (user.pass === pass) {
             req.session.user = user;
-
             res.status(201).json({ msg: user });
         } else {
             res.status(401).json({ msg: "Check Your Email and Password!" });
@@ -63,11 +65,37 @@ app.post('/logout', (req, res) => {
     });
 });
 
-
+let needMail;
 app.post('/sendmail', (req, res) => {
-    const { email, subject, message } = req.body;
-    let resp = mailSend(email, subject, message);
+    let subject = "Test Mail";
+    let email = req.body.email;
+    let resp = mailSend(email, subject);
+    if (resp) {
+        needMail = email;
+    }
     res.json({ msg: resp });
+})
+
+
+app.post("/newPassword", async (req, res) => {
+    const { pass, npass } = req.body;
+    console.log(`${pass} ${npass} ${needMail}`);
+    await User.findOne({ email: needMail }).then((user) => {
+        console.log(`1`);
+        if (pass != npass) {
+            console.log(`3`);
+            res.json({ msg: "Password doesn't Matchiing!" });
+        } else {
+            console.log(`2`);
+            User.updateOne({ email: needMail }, { $set: { pass: npass } }).then((res) => {
+                console.log(res)
+            }).catch((err) => {
+                console.log(err)
+            });
+        }
+    }).catch((err) => {
+        res.json({ msg: err });
+    })
 })
 app.listen((port), (req, res) => {
     console.log(`http://127.0.0.1:${port}`);

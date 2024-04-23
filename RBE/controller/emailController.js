@@ -2,7 +2,7 @@ const dotenv = require("dotenv").config({ path: "../config.env" });
 const nodemailer = require("nodemailer");
 const expressAsyncHandler = require("express-async-handler");
 const { text } = require("body-parser");
-console.log(process.env.SECRET_KEY);
+
 
 let transport = nodemailer.createTransport({
     host: process.env.SMTP_HOST,

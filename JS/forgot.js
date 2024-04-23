@@ -1,24 +1,26 @@
-document.getElementById("forgot").addEventListener('click', function (event) {
+document.getElementById('forgot').addEventListener('submit', function (event) {
+    // Prevent the default form submission behavior
     event.preventDefault();
+    let formDataObject = {};
     let formData = new FormData(this);
-    
+    for (let pair of formData.entries()) {
+        formDataObject[pair[0]] = pair[1];
 
-    console.log("Error:",formData);
+    }
+
+    console.log(formDataObject);
     // Client-side code (running in the browser)
-    fetch('http://127.0.0.1:12345/send-email', {
+    fetch('http://127.0.0.1:12345/sendmail', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-            to: formDataObject.email,
-            subject: 'Test Email',
-            text: 'This is a test email sent from JavaScript',
-        }),
+        body: JSON.stringify(formDataObject)
     })
         .then(response => {
             if (response.ok) {
                 console.log('Email sent successfully');
+                alert('Email sent successfully');
             } else {
                 console.error('Error sending email');
             }
