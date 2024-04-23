@@ -25,13 +25,15 @@ app.use(session({
 //this is for Registration route
 app.post('/register', async (req, res) => {
     const { role, fname, lname, email, pass } = req.body;
-    if (User.findOne({ email: email })) {
-        res.sendStatus(409).json({ msg: "Email Already Exists!" });
+    const userExsits = await User.findOne({ email });
+    if (userExsits) {
+        res.status(401).json({ msg: "User Already Exists" });
     } else {
         const user = new User({ role, fname, lname, email, pass });
-        await user.save();
+        user.save();
         res.json({ message: 'User created successfully', user });
     }
+
 })
 
 
@@ -65,6 +67,14 @@ app.post('/logout', (req, res) => {
     });
 });
 
+app.post("/oneEmplo", async (req, res) => {
+    const uId = req.body;
+    await User.findOne({ _id: uId.formId }).then((oneuData) => {
+        res.json({ msg: oneuData })
+    }).catch((err) => {
+        res.json({ err: err });
+    })
+})
 let needMail;
 app.post('/sendmail', (req, res) => {
     let subject = "Test Mail";
@@ -97,6 +107,13 @@ app.post("/newPassword", async (req, res) => {
         res.json({ msg: err });
     })
 })
+
+app.post('/EmployeeData', async (req, res) => {
+    await User.find({}).then((users) => {
+        res.json({ msg: users });
+    })
+})
+
 app.listen((port), (req, res) => {
     console.log(`http://127.0.0.1:${port}`);
 })
