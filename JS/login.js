@@ -20,7 +20,8 @@ document.getElementById("register").addEventListener("submit", function (event) 
         },
         body: JSON.stringify(formDataObject) // Convert form data object to JSON
     }).then((res) => {
-        console.log(res)
+            alert("Registeration Sucessfully.")
+            window.location.href="../login1.html";
     }).catch((err) => {
         console.log("Error:", err);
     })
@@ -51,12 +52,19 @@ document.getElementById("login").addEventListener("submit", function (event) {
         })
         .then((data) => {
             if (stus === 201) {
-                console.log(data.msg.id);
-                localStorage.setItem('id', data.msg.id);
                 localStorage.setItem('fname', data.msg.fname);
                 localStorage.setItem('lname', data.msg.lname);
                 localStorage.setItem('email', data.msg.email);
-                window.location.href = '../LoginIn/Home/home.html';
+                console.log(typeof(data.msg.role));
+                if(data.msg.role === "HOD"){
+                    window.location.href = '../HOD.html';
+                }
+                if(data.msg.role === "HR"){
+                    window.location.href = '../dash.html';
+                }
+                if(data.msg.role === "IS"){
+                    window.location.href = '../immediateSupervisor.html';
+                }
             } else {
                 console.log(data.msg);
             }

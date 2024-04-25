@@ -7,6 +7,7 @@ const bodyParser = require("body-parser");
 const port = process.env.PORT;
 const cors = require("cors");
 const User = require("./Schema/UserSchema.js");
+const Empl = require("./Schema/employeeShcema.js");
 const mailSend = require("./controller/emailController.js");
 
 /* App uses starts from here */
@@ -69,8 +70,10 @@ app.post('/logout', (req, res) => {
 
 app.post("/oneEmplo", async (req, res) => {
     const uId = req.body;
-    await User.findOne({ _id: uId.formId }).then((oneuData) => {
-        res.json({ msg: oneuData })
+    console.log(`FormId:${uId.formId}`);
+    await Empl.findOne({ _id: uId.formId }).then((oneuData) => {
+        console.log(oneuData)
+        res.json({ Oemp: oneuData })
     }).catch((err) => {
         res.json({ err: err });
     })
@@ -109,9 +112,21 @@ app.post("/newPassword", async (req, res) => {
 })
 
 app.post('/EmployeeData', async (req, res) => {
-    await User.find({}).then((users) => {
+    await Empl.find({}).then((users) => {
         res.json({ msg: users });
     })
+})
+
+app.post("/addemp", async (req, res) => {
+    const { name, dsgn, depart, tkt, DOJ, DOC } = req.body;
+    console.log(name, dsgn, depart, DOJ, DOC);
+    let emp = new Empl({ name, dsgn, depart, tkt, DOJ, DOC });
+    if (emp) {
+        emp.save();
+        res.json({ msg: "add Employee" });
+    } else {
+        res.json({ err: "Error" });
+    }
 })
 
 app.listen((port), (req, res) => {

@@ -42,7 +42,6 @@ const onPageLoad = async () => {
             "Content-Type": "application/json",
         }
     }).then((users => users.json())).then((data) => {
-        let tktNo = 121;
         data.msg.forEach((item, index) => {
             const tableBody = document.getElementById("tableBody");
 
@@ -53,15 +52,15 @@ const onPageLoad = async () => {
             row.appendChild(serialCell);
 
             const ticketCell = document.createElement("td");
-            ticketCell.textContent = tktNo; // Assuming you want to increment tktNo with each row
+            ticketCell.textContent = item.tkt; // Assuming you want to increment tktNo with each row
             row.appendChild(ticketCell);
 
             const nameCell = document.createElement("td");
-            nameCell.textContent = item.fname + " " + item.lname;
+            nameCell.textContent = item.name;
             row.appendChild(nameCell);
 
             const roleCell = document.createElement("td");
-            roleCell.textContent = item.role;
+            roleCell.textContent = item.depart;
             row.appendChild(roleCell);
 
             const actionCell = document.createElement("td");
@@ -72,7 +71,6 @@ const onPageLoad = async () => {
             profileLink.href = "profile.html";
             profileLink.textContent = "Profile";
             profileButton.appendChild(profileLink);
-
             profileButton.addEventListener("click", () => {
                 let formId = item._id;
                 console.log(`formId ${formId}`);
@@ -82,17 +80,28 @@ const onPageLoad = async () => {
                     headers: {
                         "Content-Type": "application/json",
                     },
-                    body: JSON.stringify({
-                        formId
-                    })
-                }).then((res) => res.json()).then((data) => {
-                    console.log(data.msg);
-                    console.log(data.msg.email);
+                    body: JSON.stringify({ formId })
+                }).then((res) => {
+                    if (!res.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return res.json();
+                }).then((data) => {
+                    console.log("This is data:", data.Oemp);
+                    if (data && data.Oemp) {
+                        const employeeData = data.Oemp;
+                        localStorage.setItem("name", employeeData.name);
+                        localStorage.setItem("dsgn", employeeData.dsgn);
+                        localStorage.setItem("depart", employeeData.depart);
+                        localStorage.setItem("tkt", employeeData.tkt);
+                        localStorage.setItem("DOJ", employeeData.DOJ);
+                        console.log("Data stored in localStorage successfully.");
+                    } else {
+                        console.log("No employee data found in the response.");
+                    }
                 }).catch((err) => {
-                    console.log(err);
-                })
-                console.log(item._id);
-
+                    console.error("Error fetching or storing employee data:", err);
+                });
             });
 
             actionCell.appendChild(profileButton);
@@ -105,7 +114,6 @@ const onPageLoad = async () => {
             row.appendChild(actionCell);
 
             tableBody.appendChild(row);
-            tktNo += 1;
         })
     })
 }
