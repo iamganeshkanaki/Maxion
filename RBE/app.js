@@ -70,10 +70,10 @@ app.post('/logout', (req, res) => {
 
 app.post("/oneEmplo", async (req, res) => {
     const uId = req.body;
-    console.log(`FormId:${uId.formId}`);
-    await Empl.findOne({ _id: uId.formId }).then((oneuData) => {
+    console.log(`FormId:${uId.formId}`); 
+    await Empl.findOne({ _id: uId.formId }).then((oneuData) => { 
         console.log(oneuData)
-        res.json({ Oemp: oneuData })
+        res.json({ Oemp: oneuData })  
     }).catch((err) => {
         res.json({ err: err });
     })

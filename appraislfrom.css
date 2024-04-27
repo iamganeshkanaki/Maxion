@@ -1,3 +1,9 @@
+/* *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -11,60 +17,160 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 1000px;
     margin: 0 auto;
-}
-/* h1 {
-    text-align: center;
-} */
-.from-group{
-    background: transparent;
-}
-
-input{
-   outline: hidden;
-}
+} 
 
 
-table {
-    border-collapse: collapse;
-    width: 100%;
-    }
-    th, td {
-    padding: 8px;
-    border: 1px solid #ddd;
-    }
-    th {
-    text-align: left;
-    }  
-  a {
 
-    text-decoration-color:red;
-  }  
-    
-/* button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-} */
-/* button:hover {
-    background-color: #0056b3;
-    } */
 
-section{
+
+.evaluation_factor{
+  text-align: center;
+}  
+ 
+.container_emp_details{
     background-color: hsl(0, 40%, 98%);
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 100%;
+    max-width: 1000px;
     margin: 0 auto;
-    margin-top: auto;
+}  
+
+table {
+    width: calc(100% - 60px);  /* Adjust the width to expand the table horizontally */
+    border-collapse: collapse;
+    margin: 0;  /* Remove margin to reduce the gap */
+    margin-left: 10px;
+    align-items: center;
+    border: 1px solid #0b0b0b;
+    
+}
+tbody,th, td {
+  border: 1px solid #0b0b0b; 
+    margin-left: 0px;
+    
+}
+th, td {
+    padding: 8px;
+    text-align: center;
+}
+th {
+    background-color: #f2f2f2;
 }
 
-.flex{
+
+/*for radio buttons in table*/
+.flex-container {
     display: flex;
-    gap:1sem;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.flex-container label {
+  margin-left: 10px; /* Adjust spacing between radio buttons */
+} 
+
+
+
+  .container_expected_result{
+    background-color: hsl(0, 40%, 98%);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+ 
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight:normal;
 }
 
 
-      
+.container_strength_weakness {
+  background-color: hsl(0, 40%, 98%);
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.container_recommendation{
+  background-color: hsl(0, 40%, 98%);
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/*for radio buttons in recommendation*/
+.space_recommendation {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.flex-container label {
+margin-left: 10px; /* Adjust spacing between radio buttons */
+} 
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+.approval_rejection{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size:x-large;
+}
+.approval_rejection label {
+margin-left: 10px; /* Adjust spacing between radio buttons */
+} 
+
+
+
+  /* Checkbox and button styles */
+  input[type="checkbox"],
+  button[type="submit"],
+  button[type="cancel"] {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+  }
+  
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px; /* Adjust margin-top as needed */
+}
+
+.button-space {
+  width: 40px; /* Adjust the width of the space */
+}
+
+  button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  button[type="cancel"] {
+    background-color: #dc3545;
+    color: #fff;
+  }
+  
+  input[type="checkbox"] {
+    margin-right: 5px;
+  }

@@ -4,206 +4,196 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="appraislfrom.css">
-    <title>Employee Appraisal Form</title>
+    <title>Confirmation  Form</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+  
 
 </head>
 <body>
     <div class="container">
         
-        <script src="script1.js"></script>
-        <h1>Employee Appraisal Form</h1>
+        <h1>Employee Confirmation Form</h1>
         <form>
-            <!-- <text inputmode="name">
-                Full Name: ________________________
-                TKT.No: __________________<br>
-            </text> 
-            <text>
-                Designation: ___________________
-                Dept: _________________________<br>
-            </text>
-            <text>
-                Date of joining: __________________
-                Date of confirmation: _______________<br>
-            </text> -->
-            <!-- <div class="form-group">
-                <label for="name">Full Name:</label>
-                <input type="text" id="Full Name" name="Full Name">
-                <label for="TKT.No">TKT.No:</label>
-                <input type="text" id=" TKT.No" name="TKT.No"><br>
+
+            <div class="container_emp_details">
+            <h2>Employee Details</h2>
+                
+                    <div class="form-group">
+                        <label for="full_name">Full Name</label>  
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tkt_no">TKT.NO</label>  
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="designation">Designation</label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="department">Department</label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date_of_joining">Date of Joining</label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date_of_confirmation">Date of Confirmation</label>
+                    </div>
+
             </div>
-            <div class="form-group">
-                <label for="name">Designation:</label>
-                <input type="text" id="Designation" name="Designation">
-                <label for="TKT.No">Dept:</label>
-                <input type="text" id="Dept" name="Dept"><br>
-            </div> -->
-                
-                
-                <!-- <label for="Designation">Designation:</label>
-                <input type="text" id="Designation" name="Designation">
-                <label for="Dep">Dept:</label>
-                <input type="text" id="Dept" name="Dept"><br>
-
-                <label for="Date of Joining">Date of Joining:</label>
-                <input type="text" id="DateofJoining" name="DateofJoining">
-                <label for="Date Of Confirmation">Date Of Confirmation:</label>
-                <input type="text" id="DateOfConfirmation" name="DateOfConfirmation"> -->
-
-                <div class="row">
-                    <div class="col-md-3"><label>First Name</label></div>
-                    <div class="col-md-3"> <input type="text"></div>
-                
-                    <div class="col-md-3"><label>TKT.NO</label></div>
-                     <div class="col-md-3"> <input type="text"></div>
-                </div>
-                <div class="row"><br></div>
-                <div class="row">
-                    <div class="col-md-3"><label> Designation</label></div>
-                    <div class="col-md-3"> <input type="text"></div>
-                
-                    <div class="col-md-3"><label>Dept</label></div>
-                     <div class="col-md-3"> <input type="text"></div>
-                </div>
-                <div class="row"><br></div>
-                <div class="row">
-                    <div class="col-md-3"><label> Date of Joining</label></div>
-                    <div class="col-md-3"> <input type="text"></div>
-                
-                    <div class="col-md-3"><label>Date Of Confirmation::</label></div>
-                     <div class="col-md-3"> <input type="text"></div>
-                </div>
-                
-               
-                      
-        </form>
-
-        <!-- <section>
-            <h1>Attendance</h1>
-        </section> -->
+      
 
         
         <br>
-        <h3>Evaluation Factors</h3>
+
+        <h2 class="evaluation_factor">Evaluation Factors</h2>
+        
         <table>
             <thead>
             <tr>
                 <th>Factor</th>
                 <th>Rating</th>
-                <th>Comments</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-                 <td>Job Knowledge</td>
-                    <td>
-                    
-                        <input type="radio" id="job_knowledge_meet_expectation" name="job_knowledge" value="Meet Expectation">
-                        <label for="meet_expectation">
-                            <i class="fas fa-check"></i>
-                            Meet Expectation
-                        </label>
-
-                        <input type="radio" id="job_knowledge_exception" name="job_knowledge" value="Exception">
-                        <label for="job_knowledge_exception">Exception</label>
-
-                        <input type="radio" id="job_knowledge_need_improvement" name="job_knowledge" value="Need Improvement">
-                        <label for="job_knowledge_need_improvement">Need Improvement</label>
-                    
+        
+                <tr>
+                    <td>Key Recommendation</td>
+                    <td class="flex-container">
+                        <label><input type="radio" name="key_recommendation" value="Meet Expectation">Meet Expectation</label>
+                        <label><input type="radio" name="key_recommendation" value="High Potential">High Potential</label>
+                        <label><input type="radio" name="key_recommendation" value="Not Meet Expectation">Not Meet Expectation</label>
+                        <label><input type="radio" name="key_recommendation" value="Need To Improve">Need To Improve</label>
                     </td>
-                <td><textarea name="job_knowledge_comments"></textarea></td>
-            </tr>
-            <tr>
-                <td>Work Quality</td>
-                <td>
-                    <input type="radio" id="work_quality_meet_expectation" name="work_quality" value="Meet Expectation">
-                    <label for="work_quality_meet_expectation">Meet Expectation</label>
-
-                    <input type="radio" id="work_quality_exception" name="work_quality" value="Exception">
-                    <label for="work_quality_exception">Exception</label>
-
-                    <input type="radio" id="work_quality_need_improvement" name="work_quality" value="Need Improvement">
-                    <label for="work_quality_need_improvement">Need Improvement</label>
-                </td>
-                <td><textarea name="work_quality_comments"></textarea></td>
-            </tr>
-            <tr>
-                <td>Work Rate</td>
-                <td>
-                    <input type="radio" id="work_rate_meet_expectation" name="work_rate" value="Meet Expectation">
-                    <label for="work_rate_meet_expectation">Meet Expectation</label>
-                    <input type="radio" id="work_rate_exception" name="work_rate" value="Exception">
-                    <label for="work_rate_exception">Exception</label>
-                    <input type="radio" id="work_rate_need_improvement" name="work_rate" value="Need Improvement">
-                    <label for="work_rate_need_improvement">Need Improvement</label> 
-                </td>
-                <td><textarea name="work_rate_comments"></textarea></td>
-            </tr>
-            <tr>
-                <td>Communication</td>
-                <td>
-                    <input type="radio" id="communication_meet_expectation" name="communication" value="Meet Expectation">
-                    <label for="communication_meet_expectation">Meet Expectation</label>
-                    <input type="radio" id="communication_exception" name="communication" value="Exception">
-                    <label for="communication_exception">Exception</label>
-                    <input type="radio" id="communication_need_improvement" name="communication" value="Need Improvement">
-                    <label for="communication_need_improvement">Need Improvement</label>
-                </td>
-                <td><textarea name="work_rate_comments"></textarea></td>
-            </tr>
-            <tr>
-                <td>Interpersonal</td>
-                <td>
-                    <input type="radio" id="interpersonal_meet_expectation" name="interpersonal" value="Meet Expectation">
-                    <label for="interpersonal_meet_expectation">Meet Expectation</label>
-                    <input type="radio" id="interpersonal_exception" name="interpersonal" value="Exception">
-                    <label for="interpersonal_exception">Exception</label>
-                    <input type="radio" id="interpersonal_need_improvement" name="interpersonal" value="Need Improvement">
-                    <label for="interpersonal_need_improvement">Need Improvement</label>
-                </td>
-                <td><textarea name="work_rate_comments"></textarea></td>
-            </tr>
-            <tr>
-                <td>Project Participation(No. Kaizen)</td>
-                <td>
-                    <input type="radio" id="project_participation_meet_expectation" name="project_participation" value="Meet Expectation">
-                    <label for="project_participation_meet_expectation">Meet Expectation</label>
-                    <input type="radio" id="project_participation_exception" name="project_participation" value="Exception">
-                    <label for="project_participation_exception">Exception</label>
-                    <input type="radio" id="project_participation_need_improvement" name="project_participation" value="Need Improvement">
-                    <label for="project_participation_need_improvement">Need Improvement</label>
-                </td>
-                <td><textarea name="project_participation_comments"></textarea></td>
-            </tr>
-            <tr>
-                <td>Multi Skilled Developed</td>
-                <td>
-                    <input type="radio" id="multi_skilled_developed_meet_expectation" name="multi_skilled_developed" value="Meet Expectation">
-                    <label for="multi_skilled_developed_meet_expectation">Meet Expectation</label>
-                    <input type="radio" id="multi_skilled_developed_exception" name="multi_skilled_developed" value="Exception">
-                    <label for="multi_skilled_developed_exception">Exception</label>
-                    <input type="radio" id="multi_skilled_developed_need_improvement" name="multi_skilled_developed" value="Need Improvement">
-                    <label for="multi_skilled_developed_need_improvement">Need Improvement</label>
-                    
-                    
-                </td>
-                <td><textarea name="multi_skilled_developed_comments"></textarea></td>
-            </tr>
+                </tr>
+        
+                <tr>
+                    <td>Behavior</td>
+                    <td class="flex-container">
+                        <label><input type="radio" name="behavior" value="Meet Expectation">Meet Expectation</label>
+                        <label><input type="radio" name="behavior" value="High Potential">High Potential</label>
+                        <label><input type="radio" name="behavior" value="Not Meet Expectation">Not Meet Expectation</label>
+                        <label><input type="radio" name="behavior" value="Need To Improve">Need To Improve</label>
+                    </td>
+                </tr>
+        
+                <tr>
+                    <td>Job Knowledge</td>
+                    <td class="flex-container">
+                        <label><input type="radio" name="job_knowledge" value="Meet Expectation">Meet Expectation</label>
+                        <label><input type="radio" name="job_knowledge" value="High Potential">High Potential</label>
+                        <label><input type="radio" name="job_knowledge" value="Not Meet Expectation">Not Meet Expectation</label>
+                        <label><input type="radio" name="job_knowledge" value="Need To Improve">Need To Improve</label>
+                    </td>
+                </tr>
+        
+                <tr>
+                    <td>Communication</td>
+                    <td class="flex-container">
+                        <label><input type="radio" name="communication" value="Meet Expectation">Meet Expectation</label>
+                        <label><input type="radio" name="communication" value="High Potential">High Potential</label>
+                        <label><input type="radio" name="communication" value="Not Meet Expectation">Not Meet Expectation</label>
+                        <label><input type="radio" name="communication" value="Need To Improve">Need To Improve</label>
+                    </td>
+                </tr>
+        
+                <tr>
+                    <td>Interpersonal</td>
+                    <td class="flex-container">
+                        <label><input type="radio" name="interpersonal" value="Meet Expectation">Meet Expectation</label>
+                        <label><input type="radio" name="interpersonal" value="High Potential">High Potential</label>
+                        <label><input type="radio" name="interpersonal" value="Not Meet Expectation">Not Meet Expectation</label>
+                        <label><input type="radio" name="interpersonal" value="Need To Improve">Need To Improve</label>
+                    </td>
+                </tr>
+        
+                <tr>
+                    <td>Overall Attendance</td>
+                    <td class="flex-container">
+                        <label><input type="radio" name="overall_attendance" value="Meet Expectation">Meet Expectation</label>
+                        <label><input type="radio" name="overall_attendance" value="High Potential">High Potential</label>
+                        <label><input type="radio" name="overall_attendance" value="Not Meet Expectation">Not Meet Expectation</label>
+                        <label><input type="radio" name="overall_attendance" value="Need To Improve">Need To Improve</label>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
-
+        
         <br>
-        <p>Employee Confirmation: <p>
-            <input type="checkbox" name="employee_confirmation" required> I have reviewed and confirm the accuracy of the information in this evaluation.</p>
-        <button type="submit">Submit Evaluation</button>
-        <button type="button" class="btn btn-primary"> Cancel </button>
+        <br>
 
+    <div class="container_expected_result">
+                <div class="form-group">
+                    <h2>Expected Result</h2>
+                    <br>
+                    <input type="text" id="expected_result" name="expected_result" placeholder="Remark">
     </div>
-    
+    </div>   
+
+<br><br>
+        <div class="container_strength_weakness">
+            <h2>Strength and Weakness</h2>
+            <form>
+              
+                
+                <div class="form-group">
+                    <label for="strength">Strength</label>
+                    <br>
+                    <input type="text" id="strength" name="strength" placeholder="Please specify strength here">
+                </div>
+                <div class="form-group">
+                    <label for="weakness">Weakness</label>
+                    <br>
+                    <input type="text" id="weakness" name="weakness" placeholder="Please specify weakness here">
+                </div>
+                </div>
+
+                <br><br>
+                <div class="container_recommendation">
+                    <h2>Recommend / Not Recommend</h2>
+                    <div class="form-group">
+                        <div class="space_recommendation">
+                        
+                        <label><input type="radio" name="recommendation" value="Recommend"><b>Recommend</b> </label>
+                        
+                        <label><input type="radio" name="recommendation" value="Not Recommend"><b>Not Recommend</b></label>
+                    </div>
+                    <br>
+                        <input type="text" id="recommendation" name="recommendation" placeholder="Please specify reason here">
+                </div>   
+        </div>
+
+
+                <br>
+               <h2>Confirmation:</h2>
+                    <br>
+                    <div class="form-group">
+                        <div class="approval_rejection">
+                        
+                        <label><input type="radio" name="approval_rejection" value="Approve"><b>Approve</b> </label>
+                        
+                        <label><input type="radio" name="approval_rejection" value="Reject"><b>Reject</b></label>
+                    </div>
+<br>
+                    <input type="checkbox" name="employee_confirmation" required> I have reviewed and confirm the accuracy of the information in this evaluation.</p>
+
+                    <div class="button-container">
+                        <button type="submit" class="btn btn-primary">Submit Evaluation</button>
+                        <div class="button-space"></div>
+                        <button type="cancel" class="btn btn-primary"> Cancel </button>
+                    </div>
+            </form>
+        </div>
+
+        
+  
+       
+    </div>
+</form>
 </body>
 </html>
